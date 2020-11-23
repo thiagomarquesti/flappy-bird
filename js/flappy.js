@@ -84,6 +84,9 @@ function Passaro(alturaDoJogo) {
     window.onkeydown = e => voando = true
     window.onkeyup = e => voando = false
 
+    window.ontouchstart = e => voando = true
+    window.ontouchend = e => voando = false
+
     this.animar = () => {
         const novoY = this.getY() + (voando ? 8 : -5)
         this.setY(novoY);
@@ -152,5 +155,7 @@ function FlappyBird() {
         }, 20);
     }
 }
+
+
 
 new FlappyBird().start()
